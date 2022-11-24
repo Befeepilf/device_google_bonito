@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+# MODULE_BUILD_FROM_SOURCE := true
+
 # avoid using generic aosp_product.mk libnfc-nci.conf
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_PRODUCT)/etc/libnfc-nci.conf
@@ -47,7 +49,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_vendor.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_vendor.mk)
 
 $(call inherit-product, device/google/bonito/device-sargo.mk)
-$(call inherit-product-if-exists, vendor/google_devices/bonito/proprietary/device-vendor.mk)
+# $(call inherit-product-if-exists, vendor/google_devices/bonito/proprietary/device-vendor.mk)
+$(call inherit-product-if-exists, vendor/google_devices/sargo/proprietary/device-vendor.mk)
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
